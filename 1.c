@@ -11,5 +11,10 @@ int main ()
         int b = a * a;
         printf("sayinin karesi %d", b);
     }
+    else
+    {
+        int c = a * a * a;
+        printf("%d", c);
+    }
     return 0;
 }
