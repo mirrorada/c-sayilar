@@ -1,38 +1,86 @@
-# Çift ve Tek Sayı İşlemleri
+# Sayı İşlemleri (Çift / Tek Kontrolü)
 
-Bu proje, kullanıcıdan bir tam sayı alan ve sayının tek veya çift olmasına göre farklı işlemler gerçekleştiren basit bir C programıdır.
+Bu proje, kullanıcıdan alınan bir tam sayı üzerinde basit matematiksel işlemler yapan bir C programıdır.
 
-## Özellikler
+## Amaç
 
-### Çift Sayılar
+Kullanıcının girdiği sayının **çift mi tek mi olduğunu kontrol ederek** farklı işlemler gerçekleştirmek:
 
-Girilen sayı çift ise sayının karesi hesaplanır ve ekrana yazdırılır.
+* Çift sayı ise: sayının karesi hesaplanır
+* Tek sayı ise: sayının küpü hesaplanır
 
-Örnek:
+---
 
-Girdi:
+## Programın Çalışma Mantığı
+
+1. Kullanıcıdan bir tam sayı alınır (`scanf` ile)
+2. Sayının 2’ye bölümünden kalan kontrol edilir:
+
+   * `a % 2 == 0` → sayı çifttir
+   * değilse → sayı tektir
+3. Koşula göre işlem yapılır:
+
+   * Çiftse → `a * a`
+   * Tekse → `a * a * a`
+4. Sonuç ekrana yazdırılır (`printf` ile)
+
+---
+
+## Kullanılan C Yapıları
+
+* `if - else` koşul yapısı
+* `%` (mod alma operatörü)
+* `printf()` → ekrana yazdırma
+* `scanf()` → kullanıcıdan veri alma
+
+---
+
+## Örnek Çalışma
+
+**Girdi:**
+
+```
 4
+```
 
-Çıktı:
+**Çıktı:**
+
+```
 16
+```
 
-### Tek Sayılar
+---
 
-İlk sürümde tek sayılar için herhangi bir işlem yapılmaz.
+**Girdi:**
 
-## Kullanılan Yapılar
+```
+5
+```
 
-* `if` koşulu ile sayının çift olup olmadığı kontrol edilir.
-* `%` (mod) operatörü kullanılarak sayının 2'ye bölümünden kalan hesaplanır.
-* `printf()` ile sonuç ekrana yazdırılır.
-* `scanf()` ile kullanıcıdan veri alınır.
+**Çıktı:**
 
-## Derleme
+```
+125
+```
 
-GCC kullanıyorsanız:
+---
 
+## Derleme ve Çalıştırma
+
+GCC ile derlemek için:
+
+```
 gcc 1.c -o program
+```
 
 Çalıştırmak için:
 
+```
 ./program
+```
+
+---
+
+## Not
+
+Bu proje, temel C dili koşul yapıları ve giriş/çıkış işlemlerini öğrenmek amacıyla hazırlanmıştır.
